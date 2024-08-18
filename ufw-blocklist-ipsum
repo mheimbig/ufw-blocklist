@@ -11,7 +11,7 @@
 # install this file into /etc/cron.daily/ufw-blocklist-ipsum
 
 ## URL must return a text file with one IP address per line
-ipsumurl='https://raw.githubusercontent.com/stamparm/ipsum/master/levels/3.txt'
+ipsumurl='https://raw.githubusercontent.com/stamparm/ipsum/master/levels/1.txt'
 # reject the new list if there are fewer than minlen number of ip addresses
 minlen=1000
 
@@ -65,7 +65,7 @@ isvalidip () {
 
 ## create a temporary ipset
 tmpsetname="$(mktemp -u | cut -f2 -d'.')-tmp"
-$ipset_exe -q create "$tmpsetname" hash:net
+$ipset_exe -q create "$tmpsetname" hash:net maxelem 262144
 RET=$?
 if [ $RET -ne 0 ]; then
         $logger -s "error code $RET creating temporary ipset $tmpsetname"
