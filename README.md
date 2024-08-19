@@ -24,7 +24,7 @@ sudo cp /etc/ufw/after.init /etc/ufw/after.init.orig
 
 Install the ufw-blocklist files
 ```
-git clone https://github.com/poddmo/ufw-blocklist.git
+git clone https://github.com/mheimbig/ufw-blocklist.git
 cd ufw-blocklist
 sudo cp after.init /etc/ufw/after.init
 sudo cp ufw-blocklist-ipsum /etc/cron.daily/ufw-blocklist-ipsum
